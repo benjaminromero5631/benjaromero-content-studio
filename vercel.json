@@ -1,7 +1,11 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/", "destination": "/studio", "permanent": false }
+  ],
   "headers": [
     { "source": "/studio.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" }] },
+    { "source": "/studio", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" }] },
     { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] },
     { "source": "/content/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
   ]

@@ -1,11 +1,10 @@
 # Benja Romero · Content Studio
 
-Sitio público de marca personal y estudio privado de guionización y métricas. Hecho con HTML, CSS y JavaScript nativos. No usa paquetes, base de datos ni APIs de IA de pago.
+Herramienta interna de guionización y métricas para la marca personal de Benja Romero. Hecho con HTML, CSS y JavaScript nativos. No usa paquetes, base de datos ni APIs de IA de pago.
 
 ## Cómo funciona
 
-- `/` es el sitio público de Benja.
-- `/studio.html` es el espacio personal de contenido.
+- `/` redirige directamente al estudio interno (`/studio`). No hay una página pública de marca personal.
 - El estudio guarda historias, guiones, publicación y métricas en el navegador actual. Los datos se cifran con la clave local que se crea al abrirlo. Exporta un respaldo regularmente; cambiar de navegador o borrar los datos del sitio no traslada el contenido.
 - `private-seed.json` tiene la base inicial de historias. Se excluye del repositorio y del despliegue para no publicar ideas, notas ni información de revisión. Importa este archivo una vez desde **Importar base / respaldo** dentro del estudio.
 - Las métricas manuales funcionan sin conectar Instagram. El panel calcula interacciones/alcance, tasa de guardados, tasa de compartidos y tiempo promedio visto respecto de la duración.
@@ -16,9 +15,9 @@ Sitio público de marca personal y estudio privado de guionización y métricas.
 
 Pídele al asistente, por ejemplo: **“Genera 4 contenidos del pilar Emprendimiento y negocios para la etapa activa, usando solo hechos confirmados, y prepáralos para el Estudio.”** El asistente debe respetar la etapa abierta, no inventar datos, marcar afirmaciones por confirmar y respetar que Benja define el CTA. Luego carga el paquete JSON en la vista Guiones. La carga crea borradores de producción en el almacenamiento cifrado de este navegador; no publica videos en Instagram.
 
-El contenido no se sincroniza entre dispositivos ni se almacena en el servidor. La web pública tampoco incluye el banco privado de historias.
+El contenido no se sincroniza entre dispositivos ni se almacena en el servidor. El banco privado de historias tampoco se despliega.
 
-## Despliegue en Vercel
+## Despliegue de la herramienta interna en Vercel
 
 Este es un sitio estático con funciones bajo `api/`. No requiere comando de build ni dependencias externas. El proyecto de Vercel debe usar esta carpeta como raíz.
 
@@ -28,7 +27,7 @@ Para desplegar desde terminal:
 vercel --prod
 ```
 
-Vercel crea un dominio `vercel.app` gratuito. El sitio es público; `/studio.html` lleva `noindex` y los datos personales permanecen en el navegador del usuario.
+Vercel crea un dominio `vercel.app` gratuito. La URL aloja la herramienta; no hay una web de presentación pública. El contenido privado permanece cifrado en el navegador y el banco de historias no se despliega.
 
 ## Conectar Instagram más adelante
 
