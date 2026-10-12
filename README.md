@@ -1,21 +1,21 @@
 # Benja Romero · Content Studio
 
-Herramienta interna de guionización y métricas para la marca personal de Benja Romero. Hecho con HTML, CSS y JavaScript nativos. No usa paquetes, base de datos ni APIs de IA de pago.
+Herramienta interna de guionización y métricas para la marca personal de Benja Romero. El contenido abarca emprendimiento y negocios, desarrollo personal, IA aplicada y automatización/sistemas. La construcción del SaaS es una serie dentro de la marca, no el eje único. Hecho con HTML, CSS y JavaScript nativos. No usa paquetes, base de datos ni APIs de IA de pago.
 
 ## Cómo funciona
 
 - `/` redirige directamente al estudio interno (`/studio`). No hay una página pública de marca personal.
 - El estudio guarda historias, guiones, publicación y métricas en el navegador actual. Los datos se cifran con la clave local que se crea al abrirlo. Exporta un respaldo regularmente; cambiar de navegador o borrar los datos del sitio no traslada el contenido.
 - `private-seed.json` tiene la base inicial de historias. Se excluye del repositorio y del despliegue para no publicar ideas, notas ni información de revisión. Importa este archivo una vez desde **Importar base / respaldo** dentro del estudio.
-- Las métricas manuales funcionan sin conectar Instagram. El panel calcula interacciones/alcance, tasa de guardados, tasa de compartidos y tiempo promedio visto respecto de la duración.
+- Las métricas manuales funcionan sin conectar Instagram. El panel compara por plataforma, pilar, objetivo y periodo: alcance, vistas, seguimiento atribuido, visitas al perfil, comentarios, compartidos, guardados, retención media y consultas cuando aplican. Cada pieza lleva un objetivo (conexión, descubrimiento, aprendizaje o consulta) para leerla con contexto.
 - El conector oficial de Instagram está preparado. Requiere una app de Meta gratuita y autorización de la cuenta. Los tokens se cifran en una cookie HttpOnly; las credenciales de la app van solo en variables privadas de Vercel.
 - Las métricas automáticas disponibles dependen de los permisos y de lo que Instagram devuelva por Reel. La medición manual queda como respaldo.
 
 ## Flujo de contenido con el asistente
 
-Pídele al asistente, por ejemplo: **“Genera 4 contenidos del pilar Emprendimiento y negocios para la etapa activa, usando solo hechos confirmados, y prepáralos para el Estudio.”** El asistente debe respetar la etapa abierta, no inventar datos, marcar afirmaciones por confirmar y respetar que Benja define el CTA. Luego carga el paquete JSON en la vista Guiones. La carga crea borradores de producción en el almacenamiento cifrado de este navegador; no publica videos en Instagram.
+En **Guiones**, usa **Preparar pedido para el asistente**, elige cuántas piezas quieres y si prefieres un pilar o una mezcla. Copia el prompt al chat; incluye el contexto de historias registradas y pide guiones para hablar a cámara con tres ganchos alternativos. Al recibir el JSON, pégalo y elige **Cargar piezas al Estudio**. Puedes elegir temas de emprendimiento, desarrollo personal, IA y automatización; la serie del SaaS es opcional. Revisa los hechos antes de grabar. El flujo no publica videos ni llama a una API de IA.
 
-El contenido no se sincroniza entre dispositivos ni se almacena en el servidor. El banco privado de historias tampoco se despliega.
+El contenido no se sincroniza entre dispositivos ni se almacena en el servidor. El banco privado de historias se importa desde tu archivo local de respaldo/base de conocimiento.
 
 ## Despliegue de la herramienta interna en Vercel
 
@@ -46,5 +46,5 @@ No pegues contraseñas, tokens ni secretos en el chat ni dentro de archivos púb
 
 - La app de Meta aún no está creada ni autorizada; por eso la sincronización automática no se puede activar todavía.
 - El panel es de uso personal por navegador, no un producto multiusuario con base en la nube.
-- Las métricas comparan tus resultados entre sí. No predicen ni garantizan viralidad.
+- Revisa cada 15 días y compara piezas a una edad similar desde su publicación. Compara tus propios resultados por objetivo y pilar; no existe una tasa universal que garantice viralidad. Usa seguidores/alcance y visitas al perfil para crecimiento, tiempo medio visto/duración para retención, comentarios/compartidos/guardados sobre alcance para conexión y consultas solo en videos cuyo objetivo sea comercial.
 - Las historias de la base privada contienen pendientes y necesitan tu revisión antes de guionizar/publicar.
