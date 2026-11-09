@@ -1,6 +1,8 @@
 const crypto = require('crypto');
+const {hasSession} = require('../lib/content-auth');
 module.exports = async function (req, res) {
   const {IG_APP_ID, SESSION_SECRET, SITE_URL} = process.env;
+  if (!hasSession(req, SESSION_SECRET)) return res.status(401).send('Autoriza este dispositivo para abrir tu estudio.');
   if (!IG_APP_ID || !SESSION_SECRET) return res.status(503).send('Falta configurar IG_APP_ID y SESSION_SECRET en Vercel.');
   const origin = SITE_URL || `https://${req.headers.host}`;
   const redirectUri = `${origin}/api/instagram-callback`;
