@@ -1,11 +1,11 @@
 const KEYS={data:'br_content_studio_v1',salt:'br_studio_salt_v1',hash:'br_studio_hash_v1'};
-const PILLARS={business:'Emprendimiento y negocios digitales',personal:'Desarrollo personal',performance:'Deporte y rendimiento',unclassified:'Sin pilar'};
+const PILLARS={business:'Empresa / ConnAI',personal:'Voz en off (capa narrativa)',performance:'Deporte y rendimiento',unclassified:'Sin pilar'};
 const SUBPILLARS={connai:'Building in Public — ConnAI'};
 const HOOK_CATEGORIES={curiosidad:['Hay un detalle que casi nadie nota sobre {tema}.','Lo que nadie te cuenta sobre {tema}.','La mayoría no sabe esto sobre {tema}.','Este pequeño detalle cambia {tema}.'],identificacion:['Si eres de los que {situacion}, escucha esto.','Este video es para ti si estás intentando {tema}.','¿Te pasa que {situacion}?','Si quieres {resultado}, esto te interesa.'],promesa:['En este video te muestro cómo {tema}.','En menos de 30 segundos vas a entender {tema}.','Guarda esto porque te puede servir para {resultado}.','Después de ver esto vas a saber cómo {tema}.'],pregunta:['¿Sabías que {tema}?','¿Alguna vez te pasó que {situacion}?','¿Estás cometiendo este error con {tema}?','¿Por qué pasa esto cuando {tema}?'],giro:['Pensabas que el problema era {x}, pero en realidad era {y}.','Todos hacen esto, pero casi nadie lo hace bien.','Lo que parece una buena idea puede estar jugando en tu contra con {tema}.','No necesitas más {x}; necesitas {y}.']};
 const VIDEO_FORMATS=[
-  {name:'Talking head',description:'Habla directamente a cámara. Úsalo para contar una experiencia, explicar una idea o compartir una opinión con contexto.'},
+  {name:'Talking head',description:'Habla directamente a cámara. Úsalo para contar una experiencia, explicar una idea o compartir una opinión con contexto. Usar máximo dos veces al mes.'},
   {name:'Green screen',description:'Pon una noticia, publicación o pantalla de fondo y comenta qué pasó y por qué importa.'},
-  {name:'B-roll + voz en off',description:'Muestra escenas de apoyo de tu día o proceso mientras narras la idea con tu voz.'},
+  {name:'B-roll + voz en off',description:'Muestra escenas de apoyo de tu día o proceso mientras narras la idea con tu voz. Es el formato principal de la marca.'},
 ];
 const FORMAT_ALIASES={'pantalla compartida':'Pantalla compartida','screen recording':'Pantalla compartida','screen share':'Pantalla compartida','talking head':'Talking head','hablando a camara':'Talking head','hablando a cámara':'Talking head','b-roll + texto':'B-roll + texto','b roll + texto':'B-roll + texto','b-roll con texto':'B-roll + texto','green screen':'Green screen','pantalla verde':'Green screen','imagen + texto':'Imagen + texto','imagen y texto':'Imagen + texto','pov':'POV'};
 const BRAND_BASE_GROUPS=[
