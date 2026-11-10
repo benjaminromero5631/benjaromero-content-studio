@@ -21,7 +21,15 @@ Los datos del estudio se guardan en la nube del proyecto y se sincronizan entre 
 - No inventar clientes, resultados, precios o métricas.
 - Evitar duplicados y guardar la dirección específica de cada hook.
 - El deporte se genera únicamente como B-roll + voz en off.
+- El formato principal es B-roll + voz en off. Talking head máximo dos veces al mes.
 - Las hipótesis de rendimiento son señales, no certezas.
+
+## Pilares
+
+1. **Deporte y rendimiento** — BJJ, running, gimnasio, alimentación, transformación física. Formato exclusivo: B-roll + voz en off.
+2. **Empresa / ConnAI** — Building in public. Agentes de IA para atención al cliente. Formatos: Talking head, B-roll + voz en off, Green screen.
+
+Desarrollo personal no es un pilar autónomo. Es la capa narrativa de voz en off que atraviesa ambos pilares.
 
 ## Infraestructura
 
@@ -29,7 +37,8 @@ Los datos del estudio se guardan en la nube del proyecto y se sincronizan entre 
 - Deploy: Vercel.
 - Métricas: integración de Instagram mediante endpoints en `api/`.
 - Persistencia: almacenamiento del proyecto y sincronización entre sesiones autorizadas.
+- Los hooks se piden directamente en la conversación con Claude Code; las propuestas se cargan en la bandeja de Hooks con pilar, audiencia, formato y estructura.
 
 ## Historial de decisiones
 
-Se retiraron los formatos Pantalla compartida y POV. Inteligencia artificial dejó de ser pilar independiente y se integra principalmente en ConnAI y Desarrollo personal. El sistema evolucionó desde una biblioteca de hooks hacia un ciclo de aprendizaje basado en métricas, vinculación Reel–guion y replicación de contenidos ganadores.
+Se retiraron los formatos Pantalla compartida y POV. Inteligencia artificial dejó de ser pilar independiente y se integra principalmente en ConnAI. Desarrollo personal dejó de ser pilar independiente y pasa a ser capa narrativa. El sistema evolucionó desde una biblioteca de hooks hacia un ciclo de aprendizaje basado en métricas, vinculación Reel–guion y replicación de contenidos ganadores.

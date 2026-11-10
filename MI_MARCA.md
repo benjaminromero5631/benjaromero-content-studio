@@ -9,7 +9,7 @@
 
 ## Posicionamiento
 
-Benjamin documenta cómo construye ConnAI y su propia vida: emprendimiento, inteligencia artificial aplicada, desarrollo personal y rendimiento físico.
+Benjamin documenta cómo construye ConnAI y su propia vida: emprendimiento, inteligencia artificial aplicada y rendimiento físico.
 
 ConnAI es un negocio de agentes de IA para atención al cliente por WhatsApp e Instagram. Busca sus primeros clientes mediante DMs a negocios locales.
 
@@ -19,20 +19,37 @@ Zeeltra está en pausa y no debe mencionarse en el contenido actual. Agenda Viva
 
 ## Pilares
 
-1. Emprendimiento y negocios digitales
+1. Deporte y rendimiento
+   - BJJ, running, gimnasio, alimentación, recuperación y construcción de un físico estético y atlético.
+   - Formato exclusivo: B-roll + voz en off.
+
+2. Empresa / ConnAI
    - Sub-pilar: Building in Public — ConnAI.
    - Construcción del producto, DMs, ventas, primeras implementaciones, errores, decisiones y casos reales.
-2. Desarrollo personal
-   - Mentalidad, constancia, presión, miedo, límites, energía y aprender a vivir mientras se construye.
-3. Deporte y rendimiento
-   - BJJ, running, gimnasio, alimentación, recuperación y construcción de un físico estético y atlético.
-   - Solo B-roll + voz en off.
+   - Formatos: Talking head, B-roll + voz en off, Green screen.
+
+**Desarrollo personal:** capa narrativa dentro de la voz en off. No es un pilar autónomo. La mentalidad, la presión, el cansancio, las dudas y el proceso de construir una vida propia se integran en la voz de ambos pilares.
 
 ## Formatos
 
-- Talking head: directo, crudo, “yo y tú”, desde experiencia propia.
-- Green screen: noticias, mitos, tendencias y educación mainstream; siempre sugerir imágenes de fondo.
-- B-roll + voz en off: días reales, procesos, trabajo, estudio, entrenamiento y narrativa personal.
+- B-roll + voz en off: formato principal. Días reales, procesos, trabajo, estudio, entrenamiento y narrativa personal.
+- Talking head: directo, crudo, "yo y tú", desde experiencia propia. Máximo dos veces al mes (cada ~15 días).
+- Green screen: ocasional para noticias de IA, automatización y atención al cliente. Siempre sugerir imágenes de fondo.
+
+## Marca de referencia
+
+**Nike** es el horizonte de marca a largo plazo. Vestir Nike de forma natural en contenido deportivo: sin patrocinio ficticio, sin mencionar la marca explícitamente salvo que sea relevante. La energía es la misma: rendimiento, identidad atlética, construcción desde cero.
+
+## Cadencia
+
+- 5 piezas por semana en Instagram.
+- TikTok como segundo canal solo después de 4 semanas estables publicando en Instagram.
+
+## Objetivos a 3 meses
+
+- 20-30 conversaciones reales con negocios locales para ConnAI.
+- 500-1.000 seguidores nuevos en Instagram.
+- 12 semanas consecutivas publicando 5 piezas por semana.
 
 ## Voz
 
