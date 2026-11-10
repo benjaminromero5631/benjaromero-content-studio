@@ -6,3 +6,5 @@ node_modules
 .DS_Store
 /private-seed.json
 .env*.local
+clear-hooks.js
+seed-hooks.js
