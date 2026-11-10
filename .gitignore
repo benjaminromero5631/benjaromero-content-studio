@@ -8,3 +8,4 @@ node_modules
 .env*.local
 clear-hooks.js
 seed-hooks.js
+seed-hooks-v2.js
