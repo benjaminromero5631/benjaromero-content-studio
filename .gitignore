@@ -9,3 +9,4 @@ node_modules
 clear-hooks.js
 seed-hooks.js
 seed-hooks-v2.js
+fix-hooks-fields.js
