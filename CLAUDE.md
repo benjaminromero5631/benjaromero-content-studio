@@ -47,30 +47,32 @@ SITE_URL
 
 ## Estrategia de contenido actualizada
 
-### Dos pilares principales
+### Tres formatos activos (organización principal)
 
-1. **Deporte y rendimiento** — BJJ, running, gimnasio, alimentación, transformación física. Formato exclusivo: B-roll + voz en off.
-2. **Empresa / ConnAI** — Building in public: agentes de IA para atención al cliente (WhatsApp e Instagram). Clientes objetivo: veterinarias, peluquerías caninas, clínicas dentales, pymes locales. Formatos: Talking head, B-roll + voz en off, Green screen.
+Los hooks y el contenido se organizan exclusivamente por formato de video. No hay pilares ni categorías temáticas — el formato define la vista, la planificación y la generación.
 
-### Desarrollo personal como capa de voz en off
+| Formato | Descripción | Uso |
+|---|---|---|
+| **Talking head** | Cámara fija, habla directa a cámara | Opiniones, lecciones, decisiones, aprendizajes |
+| **B-roll + voz en off** | Escenas reales con narración | Documentación del proceso, deporte, día a día |
+| **Green screen** | Fondo con datos/pantalla/diagrama | Contenido de alcance, datos, procesos visuales |
 
-No es un pilar autónomo. Es la capa narrativa que atraviesa ambos pilares: la mentalidad, la presión, el cansancio, las dudas y el proceso de construir una vida propia mientras se construye un negocio. Nunca aparece como tema independiente; se integra en la voz.
+### Temas que atraviesan todos los formatos
+
+El contenido gira en torno a dos ejes temáticos que pueden aparecer en cualquier formato:
+
+1. **ConnAI / negocio** — Building in public: agentes de IA para atención al cliente (WhatsApp e Instagram). Clientes objetivo: veterinarias, peluquerías caninas, clínicas dentales, pymes locales.
+2. **Deporte y proceso** — BJJ, running, gimnasio. El deporte es contexto visual y motor de reflexión, no el tema central.
+
+**Desarrollo personal** es la capa narrativa que lo atraviesa todo: la mentalidad, la presión, las dudas y el proceso de construir una vida propia. Nunca aparece como tema independiente; siempre se integra en la voz.
 
 ### Marca de referencia a largo plazo
 
-**Nike** es el horizonte de marca. Contenido que muestre rendimiento, identidad atlética y construcción desde cero, con la misma energía aspiracional pero desde un proceso real y sin exagerar resultados.
-
-### Formato principal
-
-**B-roll + voz en off** es el formato principal de la marca. Narrativa personal, escenas reales de trabajo, entrenamiento y vida cotidiana.
-
-**Talking head** cada 15 días aproximadamente, para decisiones, errores, opiniones y aprendizajes directos.
-
-**Green screen** para contenido de alcance: noticias de IA, automatización, atención al cliente.
+**Nike** es el horizonte de marca. Contenido que muestre rendimiento, identidad atlética y construcción desde cero, con la misma energía aspiracional pero desde un proceso real y sin exagerar resultados. Modelo de referencia en video: Toto Ortuzo / Emilio Antún.
 
 ### Cadencia semanal
 
-5 piezas por semana, distribuidas entre ambos pilares y los tres formatos activos.
+5 piezas por semana, distribuidas entre los tres formatos activos.
 
 ## Objetivos a 3 meses (hasta ~febrero 2027)
 
@@ -83,9 +85,9 @@ No es un pilar autónomo. Es la capa narrativa que atraviesa ambos pilares: la m
 - No mencionar Zeeltra ni Agenda Viva.
 - El único negocio activo en el contenido es ConnAI.
 - No inventar clientes, resultados, precios ni métricas.
-- El pilar Deporte se genera únicamente como B-roll + voz en off.
+- Los hooks NO tienen campo `pillar`. Solo tienen: `id`, `format`, `hook`, `angle`, `hookCategory`, `status`, `createdAt`.
 - Rotar categorías de hooks: Curiosidad, Identificación, Promesa de valor, Pregunta directa, Giro inesperado. No repetir la misma categoría dos veces seguidas.
-- Cada hook debe incluir una dirección específica para desarrollar el video.
+- Cada hook debe incluir una dirección específica (`angle`) para desarrollar el video.
 - No duplicar hooks. Verificar similitud textual antes de agregar.
 - Desarrollo personal es voz en off, no tema central.
 - No exponer datos privados de clientes.
@@ -93,7 +95,7 @@ No es un pilar autónomo. Es la capa narrativa que atraviesa ambos pilares: la m
 
 ## Flujo editorial
 
-1. **Hooks** — bandeja de revisión, agrupados por pilar y formato
+1. **Hooks** — bandeja de revisión, agrupados por formato de video
 2. **Guionización** — hook aprobado pasa a guion; debe indicar formato
 3. **Para grabar** — filtrable por formato; Green screen tiene checklist de fondo
 4. **Grabado**
@@ -111,4 +113,5 @@ No es un pilar autónomo. Es la capa narrativa que atraviesa ambos pilares: la m
 - Los endpoints en `api/` leen y escriben Vercel Blob. No asumir que el Blob está vacío.
 - No hardcodear valores de las variables de entorno.
 - El token de Instagram vive solo en el servidor (`api/ig-token.js`); nunca enviarlo a la página pública.
-- Antes de agregar hooks en `studio.js`, verificar si ya existe una función seed/batch para ese pilar o formato.
+- Antes de agregar hooks en `studio.js`, verificar si ya existe una función seed/batch para ese formato.
+- El script `seed-hooks-v4.js` reemplaza TODOS los hooks en Vercel Blob. Requiere `.env.local` con `BLOB_READ_WRITE_TOKEN`. Correr solo con `vercel link` y `vercel env pull .env.local` previos.
