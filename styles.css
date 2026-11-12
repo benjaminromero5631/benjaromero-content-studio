@@ -252,5 +252,5 @@
 .pattern-summary{margin:18px 0;padding:20px;background:var(--panel2);border:1px solid var(--line)}.pattern-columns{display:grid;grid-template-columns:1fr 1fr;gap:24px}.pattern-columns small{color:var(--muted);font:10px var(--mono)}.pattern-columns p{margin:9px 0;font-size:12px}.pattern-columns b{color:var(--lime)}
 .writing-card-two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .writing-col-label{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#6B7280;margin-bottom:0.5rem}
-.reference-guion{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:0.5rem;padding:1rem;font-size:0.9rem;line-height:1.6;min-height:200px;white-space:pre-wrap}
+.reference-guion{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:0.5rem;padding:1rem;font-size:0.9rem;line-height:1.6;min-height:200px;white-space:pre-wrap;color:#111827}
 @media(max-width:700px){.writing-card-two-col{grid-template-columns:1fr}}
