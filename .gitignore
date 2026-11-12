@@ -10,3 +10,5 @@ clear-hooks.js
 seed-hooks.js
 seed-hooks-v2.js
 fix-hooks-fields.js
+seed-hooks-v3.js
+seed-hooks-v4.js

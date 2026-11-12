@@ -17,24 +17,23 @@ Nichos: veterinarias, peluquerías caninas, clínicas dentales y pymes locales.
 
 Zeeltra está en pausa y no debe mencionarse en el contenido actual. Agenda Viva tampoco forma parte del contexto activo.
 
-## Pilares
+## Estrategia de formatos
 
-1. Deporte y rendimiento
-   - BJJ, running, gimnasio, alimentación, recuperación y construcción de un físico estético y atlético.
-   - Formato exclusivo: B-roll + voz en off.
+El sistema se organiza por FORMATO, no por pilares temáticos. Los pilares son marco mental interno, no arquitectura del sistema.
 
-2. Empresa / ConnAI
-   - Sub-pilar: Building in Public — ConnAI.
-   - Construcción del producto, DMs, ventas, primeras implementaciones, errores, decisiones y casos reales.
-   - Formatos: Talking head, B-roll + voz en off, Green screen.
+### Talking head
+Opiniones directas, lecciones aprendidas, reflexiones personales. Hablo desde mi experiencia real construyendo ConnAI, estudiando en DuocUC y gestionando el tiempo. Sin scripts perfectos.
 
-**Desarrollo personal:** capa narrativa dentro de la voz en off. No es un pilar autónomo. La mentalidad, la presión, el cansancio, las dudas y el proceso de construir una vida propia se integran en la voz de ambos pilares.
+### B-roll + voz en off
+Mi contexto físico (gym, running, jiu jitsu, día a día) como escenario visual. La voz narra sobre negocio, mentalidad o proceso. El deporte es el fondo, no el tema. Modelo: Toto Ortuzo / Emilio Antún.
 
-## Formatos
+### Green screen (uso esencial)
+Datos, estadísticas, pantallas de herramientas, visualizaciones de problemas de negocios. Solo cuando el fondo agrega evidencia real, no decoración.
 
-- B-roll + voz en off: formato principal. Días reales, procesos, trabajo, estudio, entrenamiento y narrativa personal.
-- Talking head: directo, crudo, "yo y tú", desde experiencia propia. Máximo dos veces al mes (cada ~15 días).
-- Green screen: ocasional para noticias de IA, automatización y atención al cliente. Siempre sugerir imágenes de fondo.
+## Restricciones
+- No mencionar Zeeltra ni Agenda Viva en contenido actual
+- No inventar clientes, resultados, precios ni métricas
+- No posicionarme como coach fitness — el deporte es contexto, no identidad
 
 ## Marca de referencia
 

@@ -8,7 +8,7 @@ Benja Content Studio es una herramienta interna para crear, organizar y aprender
 
 Hooks → Guionización → Para grabar → Grabado → métricas de Instagram → contenido ganador → replicación.
 
-Los hooks se agrupan por pilar y formato. Los hooks aprobados pasan a guionización sin sacar al usuario de su contexto innecesariamente. Los guiones manuales exigen formato.
+Los hooks se agrupan por formato. Los hooks aprobados pasan a guionización sin sacar al usuario de su contexto innecesariamente. Los guiones manuales exigen formato.
 
 ## Datos y privacidad
 
@@ -24,12 +24,14 @@ Los datos del estudio se guardan en la nube del proyecto y se sincronizan entre 
 - El formato principal es B-roll + voz en off. Talking head máximo dos veces al mes.
 - Las hipótesis de rendimiento son señales, no certezas.
 
-## Pilares
+## Organización del contenido
 
-1. **Deporte y rendimiento** — BJJ, running, gimnasio, alimentación, transformación física. Formato exclusivo: B-roll + voz en off.
-2. **Empresa / ConnAI** — Building in public. Agentes de IA para atención al cliente. Formatos: Talking head, B-roll + voz en off, Green screen.
+El banco de hooks y guiones se organiza exclusivamente por FORMATO:
+- Talking head
+- B-roll + voz en off
+- Green screen (uso esencial)
 
-Desarrollo personal no es un pilar autónomo. Es la capa narrativa de voz en off que atraviesa ambos pilares.
+No existe categorización por pilares en el sistema. Los pilares (negocio/ConnAI, deporte/vida) son orientación interna para el generador, no campos de datos.
 
 ## Infraestructura
 
