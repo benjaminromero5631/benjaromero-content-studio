@@ -252,5 +252,9 @@
 .pattern-summary{margin:18px 0;padding:20px;background:var(--panel2);border:1px solid var(--line)}.pattern-columns{display:grid;grid-template-columns:1fr 1fr;gap:24px}.pattern-columns small{color:var(--muted);font:10px var(--mono)}.pattern-columns p{margin:9px 0;font-size:12px}.pattern-columns b{color:var(--lime)}
 .writing-card-two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .writing-col-label{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#6B7280;margin-bottom:0.5rem}
-.reference-guion{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:0.5rem;padding:1rem;font-size:0.9rem;line-height:1.6;min-height:200px;white-space:pre-wrap;color:#111827}
+.reference-guion{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:0.5rem;padding:0.75rem;font-size:0.9rem;min-height:200px;color:#111827;display:flex;flex-direction:column;gap:0.5rem}
+.guion-line{display:grid;grid-template-columns:1fr auto;align-items:start;gap:0.75rem;padding:0.5rem 0;border-bottom:1px solid #E5E7EB}
+.guion-line:last-child{border-bottom:none}
+.guion-text{line-height:1.5;color:#111827}
+.guion-shot{background:#E0E7FF;color:#3730A3;border-radius:0.375rem;padding:0.2rem 0.5rem;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;margin-top:0.15rem;max-width:160px;text-align:center}
 @media(max-width:700px){.writing-card-two-col{grid-template-columns:1fr}}
