@@ -336,3 +336,5 @@
 .writing-format-group[open]>.writing-format-list{padding:0 20px 20px;display:grid;gap:14px}
 .format-selector-label{display:flex;align-items:center;gap:10px;font-size:12px;color:#a4a598;text-transform:uppercase;letter-spacing:.06em;margin:0}
 .format-selector-label select.change-script-format{font-size:12px;padding:3px 8px;background:#232418;border:1px solid #3d3f34;color:var(--lime);border-radius:4px;cursor:pointer;font-family:var(--mono)}
+.reader-header-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.reader-format-select{font-size:12px;padding:3px 10px;background:#232418;border:1px solid #3d3f34;color:var(--lime);border-radius:4px;cursor:pointer;font-family:var(--mono)}
