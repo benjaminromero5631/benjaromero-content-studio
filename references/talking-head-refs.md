@@ -31,3 +31,20 @@ si convierto el 10%, tengo 20 negocios interesados.
 
 si de esos 20 me compran 5, ya pague los 3 vps, pagué mi claude, y consegui un nuevo caso de exito.
 
+
+---
+
+## REF-002
+
+¿por que comenzar a mostrar lo que hago? era una pregunta que me incomodaba
+
+me da miedo mostrar mi cuerpo, lo que hago, lo que pienso etc
+
+pero en 5 años mas, quizas me de verguenza ver mi contenido, y ver que mejoré, que mejore la empresa
+
+que mejore mi cuerpo, mi mente
+
+y que las cosas han ido mejor, por eso empece a mostrar, por que soy yo.
+
+por que en algun momento me sentiré orgulloso de lo realizado a mis 22 años.
+
