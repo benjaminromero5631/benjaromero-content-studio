@@ -334,3 +334,5 @@
 .writing-format-group>summary small{color:#a4a598;font-size:13px;line-height:1.55}
 .writing-format-group>summary strong{grid-column:2;grid-row:1;color:var(--lime);font:17px var(--mono);min-width:3ch;text-align:right;justify-self:end}
 .writing-format-group[open]>.writing-format-list{padding:0 20px 20px;display:grid;gap:14px}
+.format-selector-label{display:flex;align-items:center;gap:10px;font-size:12px;color:#a4a598;text-transform:uppercase;letter-spacing:.06em;margin:0}
+.format-selector-label select.change-script-format{font-size:12px;padding:3px 8px;background:#232418;border:1px solid #3d3f34;color:var(--lime);border-radius:4px;cursor:pointer;font-family:var(--mono)}
