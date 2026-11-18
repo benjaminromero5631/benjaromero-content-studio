@@ -321,3 +321,9 @@
 /* Input focus glow */
 .lock-card input:focus,.quick-panel input:focus,.quick-panel textarea:focus,
 .view-panel input:focus,.view-panel textarea:focus{box-shadow:0 0 0 2px rgba(200,241,53,.15)}
+
+/* Format groups — Guionización */
+.format-group{margin-bottom:36px}
+.format-group-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #2a2b24}
+.format-group-label{font-size:0.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--lime)}
+.format-group-count{font-size:0.72rem;color:var(--muted);background:#1a1b16;padding:2px 9px;border-radius:10px}
