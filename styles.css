@@ -323,7 +323,14 @@
 .view-panel input:focus,.view-panel textarea:focus{box-shadow:0 0 0 2px rgba(200,241,53,.15)}
 
 /* Format groups — Guionización */
-.format-group{margin-bottom:36px}
-.format-group-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #2a2b24}
-.format-group-label{font-size:0.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--lime)}
-.format-group-count{font-size:0.72rem;color:var(--muted);background:#1a1b16;padding:2px 9px;border-radius:10px}
+.writing-list{display:grid;gap:13px;margin-top:4px}
+.writing-format-group{background:#191a16;border:1px solid #3d3f34}
+.writing-format-group>summary{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:25px;padding:20px 24px;cursor:pointer;list-style:none}
+.writing-format-group>summary::-webkit-details-marker{display:none}
+.writing-format-group>summary::after{content:'＋';grid-column:3;grid-row:1;color:var(--lime);font-size:22px;justify-self:end}
+.writing-format-group[open]>summary::after{content:'−'}
+.writing-format-group>summary>span{display:grid;gap:6px}
+.writing-format-group>summary b{font-size:20px;letter-spacing:-.4px}
+.writing-format-group>summary small{color:#a4a598;font-size:13px;line-height:1.55}
+.writing-format-group>summary strong{grid-column:2;grid-row:1;color:var(--lime);font:17px var(--mono);min-width:3ch;text-align:right;justify-self:end}
+.writing-format-group[open]>.writing-format-list{padding:0 20px 20px;display:grid;gap:14px}
