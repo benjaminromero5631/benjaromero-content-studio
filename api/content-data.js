@@ -26,6 +26,6 @@ module.exports = async function(req, res) {
     return res.status(200).json({ok: true, etag});
   } catch (error) {
     console.error('Content store error:', error?.message || error);
-    return res.status(500).json({error: 'No se pudo sincronizar el estudio con el servidor.', _debug: error?.message || String(error)});
+    return res.status(500).json({error: 'No se pudo sincronizar el estudio con el servidor.'});
   }
 };
