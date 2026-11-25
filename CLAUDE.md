@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Herramienta interna privada para crear, organizar y aprender de contenido corto de la marca personal de Benjamin Romero (@benjaromerozl). No es una web pública. Es un estudio para gestionar hooks, guiones, grabaciones, historias y métricas de Instagram, con ciclo de aprendizaje basado en rendimiento.
+Herramienta interna privada para crear, organizar y aprender de contenido corto de la marca personal de Benjamin Romero (@benjaromerozl). No es una web pública. Es un estudio para gestionar hooks, guiones, grabaciones y métricas de Instagram, con ciclo de aprendizaje basado en rendimiento.
 
 ## Arquitectura técnica
 
@@ -12,9 +12,9 @@ benjaromero-content-studio/
 ├── studio.js            # Toda la lógica del cliente: datos, generación de hooks, sincronización
 ├── styles.css           # Estilos
 ├── api/
-│   ├── content-data.js      # GET/PUT datos principales (Vercel Blob)
+│   ├── content-data.js      # GET/PUT datos principales (GitHub Contents API)
 │   ├── content-auth.js      # Autenticación por clave de acceso + sesión
-│   ├── content-store.js     # Helpers de almacenamiento en Blob
+│   ├── content-store.js     # Helpers de lectura/escritura en GitHub
 │   ├── ai-news.js           # Radar IA: obtiene titulares de OpenAI/Anthropic/Google
 │   ├── ig-token.js          # Almacenamiento seguro del token de Instagram
 │   ├── instagram-auth.js    # Inicio del flujo OAuth de Meta
@@ -24,74 +24,112 @@ benjaromero-content-studio/
 │   └── instagram-status.js  # Estado de la conexión con Instagram
 ├── lib/
 │   ├── content-auth.js      # Sesión firmada con HMAC-SHA256
-│   ├── content-store.js     # Helpers de lectura/escritura en Vercel Blob
+│   ├── content-store.js     # Helpers de lectura/escritura (GitHub Contents API)
 │   └── ig-token.js          # Encriptación del token de Instagram
+├── _data/
+│   └── studio.json          # Datos del estudio (hooks, guiones, métricas)
 ├── vercel.json          # Configuración de rutas y funciones
 └── manifest.json        # PWA manifest
 ```
 
 **Despliegue:** Vercel. Sitio estático + funciones serverless bajo `api/`. Sin build step.
-**Persistencia:** Vercel Blob (privado). Los datos se sincronizan entre dispositivos autorizados.
-**Acceso:** Sesión autorizada por `CONTENT_ACCESS_KEY`, válida 180 días por navegador. Los datos públicos (hooks, guiones) son legibles sin clave; la base de marca y el contexto de generación requieren sesión.
+**Persistencia:** GitHub Contents API. Los datos viven en `_data/studio.json` del repositorio `benjaminromero5631/benjaromero-content-studio`. La lectura/escritura se hace con `GITHUB_TOKEN` en el servidor.
+**Acceso:** Sesión autorizada por `CONTENT_ACCESS_KEY`, válida 180 días por navegador.
 
 ## Variables de entorno requeridas
 
 ```
-BLOB_READ_WRITE_TOKEN
-CONTENT_ACCESS_KEY
-SESSION_SECRET
-IG_APP_ID
-IG_APP_SECRET
-SITE_URL
+GITHUB_TOKEN              # Token de GitHub con acceso de escritura al repo
+CONTENT_ACCESS_KEY        # Clave de acceso al estudio
+SESSION_SECRET            # Para firmar sesiones HMAC-SHA256
+IG_APP_ID                 # Meta App ID para OAuth de Instagram
+IG_APP_SECRET             # Meta App Secret
+SITE_URL                  # URL del sitio desplegado
 ```
 
-## Estrategia de contenido actualizada
+> ⚠️ `BLOB_READ_WRITE_TOKEN` ya no existe. El almacenamiento migró de Vercel Blob a GitHub Contents API. `lib/content-store.js` fue reescrito para usar `fetch()` con `GITHUB_TOKEN`.
 
-### Tres formatos activos (organización principal)
+## Identidad y contexto de marca
 
-Los hooks y el contenido se organizan exclusivamente por formato de video. No hay pilares ni categorías temáticas — el formato define la vista, la planificación y la generación.
+- **Persona:** Benjamin Romero, @benjaromerozl, chileno
+- **Bio activa:** `building @connai.ai and my own life.`
+- **Idioma del contenido:** español chileno
+- **Voz:** 60% reflexiva, 40% directa. Cercana, humana, informal, sin tono de gurú ni promesas exageradas. Muestra dudas, errores, avances y aprendizajes reales.
 
-| Formato | Descripción | Uso |
+## Negocio activo en el contenido: ConnAI
+
+ConnAI es el único negocio que aparece en el contenido. Es un SaaS de agentes IA para atención al cliente (WhatsApp e Instagram). Nichos objetivo: veterinarias, peluquerías caninas, clínicas dentales, pymes locales.
+
+Estado actual: sistema de cold email corriendo, landing page en construcción, prospección activa vía Google Maps.
+
+**No mencionar Zeeltra ni Agenda Viva.** No inventar clientes, resultados, precios ni métricas.
+
+## Sistema de formatos (organización principal)
+
+El contenido se organiza por formato, no por pilares temáticos.
+
+| Formato | Frecuencia | Descripción |
 |---|---|---|
-| **Talking head** | Cámara fija, habla directa a cámara | Opiniones, lecciones, decisiones, aprendizajes |
-| **B-roll + voz en off** | Escenas reales con narración | Documentación del proceso, deporte, día a día |
-| **Green screen** | Fondo con datos/pantalla/diagrama | Contenido de alcance, datos, procesos visuales |
+| **B-roll + voz en off** | ~4-5 piezas/semana (formato principal) | Escenas reales con narración. Hook que funciona sin cara en cámara. |
+| **Talking head** | Máximo 2 veces al mes (~cada 15 días) | Cara a cámara, opinión directa. Solo para momentos que lo justifiquen: hito, opinión fuerte, decisión concreta. |
+| **Green screen** | Ocasional | Solo para reaccionar a noticias o hitos de IA relevantes. Hook tipo noticia/reacción. |
+| **Carrusel** | Formato de apoyo | Portada tipo lección o lista concreta relacionada con construir ConnAI. Complementa, no reemplaza el B-roll. |
 
-### Temas que atraviesan todos los formatos
+**Regla del deporte:** El gym, BJJ y running son ESCENARIO VISUAL únicamente. El B-roll puede mostrar entrenamiento mientras la voz habla de negocio o proceso. El deporte NUNCA es el tema del hook. Benjamin no es coach fitness.
 
-El contenido gira en torno a dos ejes temáticos que pueden aparecer en cualquier formato:
+**Desarrollo personal** es la capa narrativa de la voz en off, no un tema central ni un pilar separado.
 
-1. **ConnAI / negocio** — Building in public: agentes de IA para atención al cliente (WhatsApp e Instagram). Clientes objetivo: veterinarias, peluquerías caninas, clínicas dentales, pymes locales.
-2. **Deporte y proceso** — BJJ, running, gimnasio. El deporte es contexto visual y motor de reflexión, no el tema central.
+## Referencias de estilo y tono
 
-**Desarrollo personal** es la capa narrativa que lo atraviesa todo: la mentalidad, la presión, las dudas y el proceso de construir una vida propia. Nunca aparece como tema independiente; siempre se integra en la voz.
+Toto Artuso, Alejo Muñoz, Emilio Antún, Daniel Dalen, Pinilla de la IA, Martin Baumann.
 
-### Marca de referencia a largo plazo
+**Marca de referencia a largo plazo:** Nike. Contenido que muestre rendimiento, identidad atlética y construcción desde cero. Energía aspiracional desde un proceso real, sin exagerar resultados.
 
-**Nike** es el horizonte de marca. Contenido que muestre rendimiento, identidad atlética y construcción desde cero, con la misma energía aspiracional pero desde un proceso real y sin exagerar resultados. Modelo de referencia en video: Toto Ortuzo / Emilio Antún.
+## Cadencia y objetivos
 
-### Cadencia semanal
+- 5 piezas por semana en Instagram
+- TikTok como segundo canal solo después de 4 semanas estables en Instagram
+- **Objetivos a 3 meses (hasta ~febrero 2027):**
+  - 20-30 conversaciones reales con negocios locales para ConnAI
+  - 500-1.000 seguidores nuevos en Instagram
+  - 12 semanas consecutivas publicando 5 piezas/semana
 
-5 piezas por semana, distribuidas entre los tres formatos activos.
+## Reglas de generación de hooks
 
-## Objetivos a 3 meses (hasta ~febrero 2027)
-
-- 20-30 conversaciones reales con negocios locales para ConnAI (DMs a veterinarias, peluquerías caninas, clínicas dentales)
-- 500-1.000 seguidores nuevos en Instagram
-- Constancia de 5 piezas por semana durante 12 semanas consecutivas
-
-## Reglas de generación vigentes
-
-- No mencionar Zeeltra ni Agenda Viva.
-- El único negocio activo en el contenido es ConnAI.
-- No inventar clientes, resultados, precios ni métricas.
-- Los hooks NO tienen campo `pillar`. Solo tienen: `id`, `format`, `hook`, `angle`, `hookCategory`, `status`, `createdAt`.
-- Rotar categorías de hooks: Curiosidad, Identificación, Promesa de valor, Pregunta directa, Giro inesperado. No repetir la misma categoría dos veces seguidas.
-- Cada hook debe incluir una dirección específica (`angle`) para desarrollar el video.
+- Los hooks NO tienen campo `pillar`. Estructura exacta: `{ id, format, hook, angle, hookCategory, status, createdAt }`
+- `status` debe ser `'new'` para que aparezcan en la bandeja del estudio
+- Rotar categorías: Curiosidad, Identificación, Promesa de valor, Pregunta directa, Giro inesperado. No repetir la misma categoría dos veces seguidas.
+- Cada hook incluye `angle`: dirección específica para desarrollar el video
 - No duplicar hooks. Verificar similitud textual antes de agregar.
-- Desarrollo personal es voz en off, no tema central.
-- No exponer datos privados de clientes.
-- Las hipótesis de rendimiento son señales, no certezas.
+- No mencionar Zeeltra, Agenda Viva, ni inventar clientes o métricas
+- Desarrollo personal = voz en off, nunca el tema principal
+
+## Carga de hooks en producción (vía API)
+
+Para cargar o reemplazar hooks en producción, usar `fetch('/api/content-data', { method: 'PUT', ... })` desde el estudio autenticado (Chrome automation con `javascript_tool`). El endpoint usa `GITHUB_TOKEN` server-side y escribe en `_data/studio.json`.
+
+**Flags de versión obligatorios al escribir `studio.json`:** Incluir siempre estos campos en el objeto raíz para evitar que `initLocal()` sobreescriba los hooks con seeds internos:
+
+```json
+{
+  "_curatedIdeasVersion": 1,
+  "_curatedVolumeVersion": 1,
+  "_aiPillarRemoved": true,
+  "_screenShareRemoved": true,
+  "_performanceBatchVersion": 1,
+  "_quotaVersion": 1,
+  "_connaiBuildingPublicVersion": 1,
+  "_currentBrandContextVersion": 1,
+  "_guionShotVersion": 3,
+  "_freshHookBatchVersion": 1,
+  "_secondHookBatchVersion": 1,
+  "_thirdHookBatchVersion": 1,
+  "_fiftyPerPillarVersion": 1,
+  "_performanceIntroVersion": 1
+}
+```
+
+Sin estos flags, `replacePendingWithCuratedIdeas()` archiva todos los hooks con `status === 'new'` al iniciar el estudio.
 
 ## Flujo editorial
 
@@ -108,10 +146,11 @@ El contenido gira en torno a dos ejes temáticos que pueden aparecer en cualquie
 
 ## Reglas para Claude en este proyecto
 
-- Nunca sobrescribir ni eliminar datos de usuario sin confirmación explícita.
-- No modificar `studio.js` sin leer el archivo completo primero: tiene inicialización encadenada con versiones (`_versionFlag`) que controlan migraciones de datos.
-- Los endpoints en `api/` leen y escriben Vercel Blob. No asumir que el Blob está vacío.
+- **Nunca sobrescribir ni eliminar datos de usuario sin confirmación explícita.**
+- **No modificar `studio.js` sin leer el archivo completo primero.** Tiene inicialización encadenada con `_versionFlag` que controlan migraciones de datos.
+- Los endpoints en `api/` leen y escriben GitHub (no Vercel Blob). No asumir que `_data/studio.json` está vacío.
 - No hardcodear valores de las variables de entorno.
 - El token de Instagram vive solo en el servidor (`api/ig-token.js`); nunca enviarlo a la página pública.
-- Antes de agregar hooks en `studio.js`, verificar si ya existe una función seed/batch para ese formato.
-- El script `seed-hooks-v4.js` reemplaza TODOS los hooks en Vercel Blob. Requiere `.env.local` con `BLOB_READ_WRITE_TOKEN`. Correr solo con `vercel link` y `vercel env pull .env.local` previos.
+- Para escribir en producción cuando `gh` CLI no tiene acceso de escritura: usar Chrome automation (`javascript_tool`) para llamar `fetch('/api/content-data', { method: 'PUT', ... })` desde el estudio autenticado.
+- No usar `seed-hooks-v4.js` ni scripts similares; están obsoletos. La carga de datos se hace vía API.
+- Antes de confirmar cualquier cambio que afecte datos del usuario, pedir confirmación explícita.
